@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "private":"true",
+  "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sequelize": "env-cmd sequelize",
+    "model:create": "env-cmd sequelize model:create",
+    "fix:models": "eslint --fix ./db/models/*",
+    "db:sync": "env-cmd node ./scripts/sync.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,7 @@
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
+    "eslint": "^7.32.0",
     "faker": "^5.5.3",
     "nodemon": "^2.0.12",
     "sequelize-cli": "^6.2.0"
