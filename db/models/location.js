@@ -1,5 +1,5 @@
-'use strict';
 const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Location extends Model {
     /**
@@ -9,16 +9,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsToMany(models.Item, { through: models.ItemLocation });
     }
   }
   Location.init({
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
+      unique: true,
     },
     description: DataTypes.STRING,
-    level_unlock: DataTypes.INTEGER
+    level_unlock: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Location',

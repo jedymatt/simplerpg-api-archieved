@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class ItemLoot extends Model {
     /**
@@ -14,7 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   ItemLoot.init({
-    tmp: DataTypes.STRING
+    dropChance: {
+      type: DataTypes.FLOAT,
+    },
   }, {
     sequelize,
     modelName: 'ItemLoot',

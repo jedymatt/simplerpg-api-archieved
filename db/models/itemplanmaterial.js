@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class ItemPlanMaterial extends Model {
     /**
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   ItemPlanMaterial.init({
-    name: DataTypes.STRING
+    amount: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'ItemPlanMaterial',

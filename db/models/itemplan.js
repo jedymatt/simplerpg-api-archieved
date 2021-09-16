@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class ItemPlan extends Model {
     /**
@@ -11,10 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.hasOne(models.Item);
+      this.belongsToMany(models.Item, { as: 'Materials', through: models.ItemPlanMaterial });
     }
   }
   ItemPlan.init({
-    name: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    description: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'ItemPlan',

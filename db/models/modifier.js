@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Modifier extends Model {
     /**
@@ -15,12 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Modifier.init({
-    prefix: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
+      unique: true,
     },
-    rewardMultiplier: DataTypes.FLOAT
+    rewardMultiplier: DataTypes.FLOAT,
   }, {
     sequelize,
     modelName: 'Modifier',

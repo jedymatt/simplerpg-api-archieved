@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class ModifierAttribute extends Model {
     /**
@@ -14,9 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   ModifierAttribute.init({
-    value: {
-      type: DataTypes.INTEGER
-    }
+    value: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'ModifierAttribute',
