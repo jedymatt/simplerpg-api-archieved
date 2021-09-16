@@ -8,4 +8,9 @@ parserOptions:
 rules:
   no-unused-vars: 0
   semi: [2, always, { omitLastInOneLineBlock: true }]
-  indent: ["error", 4]
+  indent: [warn, 2]
+  no-trailing-spaces: warn
+  eol-last: [warn, always]
+  no-multiple-empty-lines: [warn, { max: 2, maxEOF: 0 }]
+  space-infix-ops: warn
+  no-multi-spaces: warn

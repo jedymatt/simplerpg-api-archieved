@@ -1,9 +1,7 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Modifier extends Model {
+  class Quality extends Model {
     /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -11,19 +9,18 @@ module.exports = (sequelize, DataTypes) => {
          */
     static associate(models) {
       // define association here
-      this.belongsToMany(models.Attribute, { through: models.ModifierAttribute });
     }
   }
-  Modifier.init({
-    prefix: {
+  Quality.init({
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true
     },
-    rewardMultiplier: DataTypes.FLOAT
+    description: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Modifier',
+    modelName: 'Quality',
   });
-  return Modifier;
+  return Quality;
 };

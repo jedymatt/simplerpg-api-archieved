@@ -7,8 +7,9 @@
   "scripts": {
     "sequelize": "env-cmd sequelize",
     "model:create": "env-cmd sequelize model:create",
-    "fix:models": "eslint --fix ./db/models/*",
-    "db:sync": "env-cmd node ./scripts/sync.js"
+    "lint:models": "eslint --fix ./db/models/*",
+    "db:sync": "env-cmd node ./scripts/sync.js",
+    "db:seed": "env-cmd sequelize db:seed:all"
   },
   "keywords": [],
   "author": "",

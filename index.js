@@ -8,13 +8,21 @@ const { Modifier, Attribute } = require('./db/models');
 // })();
 
 (async () => {
-    // const strength = await Attribute.findOne({ where: { name: 'Strength' } });
-    const angry = await Modifier.findOne({
-        where: { prefix: 'Angry' },
-        include: Attribute
-    });
-    angry.Attributes[0].ModifierAttribute.value = 150;
-    console.log(angry.Attributes[0].ModifierAttribute.toJSON());
-    angry.Attributes[0].ModifierAttribute.save();
+  // const strength = await Attribute.findOne({ where: { name: 'Strength' } });
+  const angry = await Modifier.findOne({
+    where: { prefix: 'Angry' },
+    include: Attribute
+  });
+  angry.Attributes[0].ModifierAttribute.value = 150;
+  console.log(angry.Attributes[0].ModifierAttribute.toJSON());
+  angry.Attributes[0].ModifierAttribute.save();
 
 })();
+
+
+const fs = require('fs');
+const models = fs
+  .readdirSync('./db/models');
+
+console.log(models);
+console.log(models.length - 1);
