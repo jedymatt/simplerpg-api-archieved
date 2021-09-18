@@ -1,4 +1,6 @@
-const { Model } = require('sequelize');
+const {
+  Model,
+} = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class BossType extends Model {
@@ -13,9 +15,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   BossType.init({
     name: {
-      type: DataTypes.STRING,
-      unique: true,
+      type: DataTypes.STRING(50),
       allowNull: false,
+      unique: true,
     },
   }, {
     sequelize,

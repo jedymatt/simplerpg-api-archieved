@@ -11,15 +11,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsToMany(models.Player, { through: models.CharacterParty });
     }
   }
   Party.init({
-    // tmp: DataTypes.STRING,
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+    },
   }, {
     sequelize,
     modelName: 'Party',
-    timestamps: true,
   });
   return Party;
 };

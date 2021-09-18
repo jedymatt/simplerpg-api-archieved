@@ -1,4 +1,6 @@
-const { Model } = require('sequelize');
+const {
+  Model,
+} = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Boss extends Model {
@@ -9,18 +11,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.hasOne(models.BossType);
+      this.belongsTo(models.BossType);
+      this.belongsTo(models.Location);
+      this.belongsTo(models.Loot);
     }
   }
   Boss.init({
     name: {
-      type: DataTypes.STRING,
-      unique: true,
+      type: DataTypes.STRING(50),
       allowNull: false,
+      unique: true,
     },
-    description: {
-      type: DataTypes.STRING,
-    },
+    description: DataTypes.STRING,
+    spawnTime: DataTypes.TIME,
+    timeLimit: DataTypes.TIME,
   }, {
     sequelize,
     modelName: 'Boss',

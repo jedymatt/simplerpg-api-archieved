@@ -5,21 +5,21 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Modifier extends Model {
     /**
-         * Helper method for defining associations.
-         * This method is not a part of Sequelize lifecycle.
-         * The `models/index` file will call this method automatically.
-         */
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
     static associate(models) {
       // define association here
-      this.belongsToMany(models.Attribute, { through: models.ModifierAttribute });
     }
   }
   Modifier.init({
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
       unique: true,
     },
+    description: DataTypes.STRING,
     rewardMultiplier: DataTypes.FLOAT,
   }, {
     sequelize,

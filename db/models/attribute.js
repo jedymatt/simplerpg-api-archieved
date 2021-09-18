@@ -1,4 +1,6 @@
-const { Model } = require('sequelize');
+const {
+  Model,
+} = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Attribute extends Model {
@@ -13,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Attribute.init({
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
       unique: true,
     },

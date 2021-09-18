@@ -4,3 +4,5 @@
 - [ ] Remove Player, NonPlayer, and refactor affected by the changes
 - [ ] Add attributes in models
 - [ ] Setup express app
+
+<!-- TODO: SimpleRPG_Database, Page 8, Chapter 2.14 Table entities  -->
