@@ -11,19 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.Character);
     }
   }
   User.init({
-    discordId: {
-      type: DataTypes.BIGINT,
-      unique: true,
-      allowNull: false,
-    },
+    discordId: DataTypes.BIGINT,
   }, {
     sequelize,
     modelName: 'User',
-    timestamps: true,
   });
   return User;
 };

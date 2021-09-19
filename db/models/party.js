@@ -14,10 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Party.init({
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-    },
+    tmp: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Party',

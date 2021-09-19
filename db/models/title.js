@@ -14,11 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Title.init({
-    name: {
-      type: DataTypes.STRING(50),
-      allowNull: false,
-      unique: true,
-    },
+    name: DataTypes.STRING,
     description: DataTypes.STRING,
   }, {
     sequelize,

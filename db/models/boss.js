@@ -11,14 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.BossType);
       this.belongsTo(models.Location);
       this.belongsTo(models.Loot);
+      this.belongsTo(models.BossType);
     }
   }
   Boss.init({
+    level: DataTypes.INTEGER,
     name: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true,
     },

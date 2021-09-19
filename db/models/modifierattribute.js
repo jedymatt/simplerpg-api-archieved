@@ -11,18 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.Attribute);
-      this.belongsTo(models.Modifier);
     }
   }
   ModifierAttribute.init({
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-    },
-    value: DataTypes.INTEGER,
+    value: DataTypes.FLOAT,
   }, {
     sequelize,
     modelName: 'ModifierAttribute',

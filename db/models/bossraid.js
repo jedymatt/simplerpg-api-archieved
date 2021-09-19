@@ -3,7 +3,7 @@ const {
 } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class BossType extends Model {
+  class BossRaid extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,13 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.Party);
+      this.belongsTo(models.Boss);
     }
   }
-  BossType.init({
-    name: DataTypes.STRING,
+  BossRaid.init({
+    startedAt: {
+      type: 'TIMESTAMP',
+    },
+    endedAt: DataTypes.DATE,
   }, {
     sequelize,
-    modelName: 'BossType',
+    modelName: 'BossRaid',
   });
-  return BossType;
+  return BossRaid;
 };

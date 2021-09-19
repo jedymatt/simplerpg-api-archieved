@@ -11,11 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.Location);
     }
   }
   Character.init({
-    name: DataTypes.STRING(50),
+    name: DataTypes.STRING,
     level: DataTypes.INTEGER,
     exp: DataTypes.INTEGER,
     money: DataTypes.INTEGER,

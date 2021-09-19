@@ -11,12 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.Party);
-      this.belongsTo(models.Character);
     }
   }
   CharacterParty.init({
-    joinedAt: DataTypes.DATE,
+    tmp: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'CharacterParty',
